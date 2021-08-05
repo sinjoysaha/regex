@@ -93,3 +93,48 @@ Regex_Pattern = r"^\d\w\w\w\w.$"	# Do not delete 'r'.
 import re
 print(str(bool(re.search(Regex_Pattern, input()))).lower())
 ```
+
+## [Character Class](https://www.hackerrank.com/domains/regex?filters%5Bsubdomains%5D%5B%5D=re-character-class)
+### 1. [Matching Specific Characters](https://www.hackerrank.com/challenges/matching-specific-characters/problem)
+\[\] - The character class \[\] matches only one out of several characters placed inside the square brackets.
+
+Regex Pattern - \[aeiou\] is a vowel
+
+Test String - `o is a vowel` |  `e is a vowel`
+```
+Regex_Pattern = r'^[123][120][xs0][30Aa][xsu][.,]$'	# Do not delete 'r'.
+
+import re
+print(str(bool(re.search(Regex_Pattern, input()))).lower())
+```
+
+### 2. [Excluding Specific Characters](https://www.hackerrank.com/challenges/excluding-specific-characters/problem)
+\[^\] - The negated character class \[^\] matches any character that is not in the square brackets.
+
+Regex Pattern - \[^aeiou\] is not a vowel
+
+Test String - `k is a vowel` |  `p is a vowel`
+```
+Regex_Pattern = r'^[\D][^aeiou][^bcDF][\S][^AEIOU][^.,]$'  # OR r'^[^\d][^aeiou][^bcDF][^\s][^AEIOU][^.,]$'	# Do not delete 'r'.
+
+import re
+print(str(bool(re.search(Regex_Pattern, input()))).lower())
+```
+
+### 3. [Matching Character Ranges](https://www.hackerrank.com/challenges/matching-range-of-characters/problem)
+A hyphen (-) inside a character class specifies a range of characters where the left and right operands are the respective lower and upper bounds of the range. For example:
+
+- \[a-z\] is the same as \[abcde...wxyz\].
+- \[A-Z\] is the same as \[ABCDE...WXYZ\].
+- \[0-9\] is the same as \[0123456789\].
+In addition, if you use a caret (^) as the first character inside a character class, it will match anything that is not in that range. For example,  matches any character that is not a digit in the inclusive range from  to . **It's important to note that, when used outside of (immediately preceding) a character or character class, the caret matches the first character in the string against that character or set of characters.**
+
+Regex Pattern - \[x-z\]\[4-8\]\[A-K\]
+
+Test String - `x5F`
+```
+Regex_Pattern = r'^[a-z][1-9][^a-z][^A-Z][A-Z]'	# Do not delete 'r'.
+
+import re
+print(str(bool(re.search(Regex_Pattern, input()))).lower())
+```
