@@ -1,5 +1,7 @@
 # REGular EXpressions from [HackerRank](https://www.hackerrank.com/domains/regex) (with Solutions in Python 3)
 
+`Highlighted` part in the Test String is matched with regex pattern.
+
 ## [Introduction](https://www.hackerrank.com/domains/regex?filters%5Bsubdomains%5D%5B%5D=re-introduction)
 ### 1. [Matching Specific String](https://www.hackerrank.com/challenges/matching-specific-string/problem)
 Regex Pattern - wikipedia
@@ -134,6 +136,72 @@ Regex Pattern - \[x-z\]\[4-8\]\[A-K\]
 Test String - `x5F`
 ```
 Regex_Pattern = r'^[a-z][1-9][^a-z][^A-Z][A-Z]'	# Do not delete 'r'.
+
+import re
+print(str(bool(re.search(Regex_Pattern, input()))).lower())
+```
+
+## [Repetitions](https://www.hackerrank.com/domains/regex?filters%5Bsubdomains%5D%5B%5D=re-repetitions)
+### 1. [Matching {x} Repetitions](https://www.hackerrank.com/challenges/matching-x-repetitions/problem)
+{x} - The tool {x} will match exactly  repetitions of character/character class/groups.
+
+Regex Pattern - \w{4}
+
+Test String - `H_ck`
+```
+Regex_Pattern = r'^[a-zA-Z02468]{40}[13579\s]{5}$'	# Do not delete 'r'.
+
+import re
+print(str(bool(re.search(Regex_Pattern, input()))).lower())
+```
+
+### 2. [Matching {x, y} Repetitions](https://www.hackerrank.com/challenges/matching-x-y-repetitions/problem)
+{x,y} - The {x,y} tool will match between  and  (both inclusive) repetitions of character/character class/group.
+
+Regex Pattern - \w{1,4}\d{4,}
+
+Test String - `Hk132156545654654654` | `Hack1021`
+```
+Regex_Pattern = r'^\d{1,2}[a-zA-Z]{3,}\.{0,3}$'	# Do not delete 'r'.
+
+import re
+print(str(bool(re.search(Regex_Pattern, input()))).lower())
+```
+
+### 3. [Matching Zero Or More Repetitions](https://www.hackerrank.com/challenges/matching-zero-or-more-repetitions/problem)
+* - The * tool will match zero or more repetitions of character/character class/group.
+
+Regex Pattern - Ab*s
+
+Test String - `As` | `Abbbbbs`
+```
+Regex_Pattern = r'^\d{2,}[a-z]*[A-Z]*$'	# Do not delete 'r'.
+
+import re
+print(str(bool(re.search(Regex_Pattern, input()))).lower())
+```
+
+### 4. [Matching One Or More Repetitions](https://www.hackerrank.com/challenges/matching-one-or-more-repititions/problem)
++ - The + tool will match one or more repetitions of character/character class/group.
+
+Regex Pattern - Ab+s
+
+Test String - As | `Abbbbbs`
+```
+Regex_Pattern = r'^\d+[A-Z]+[a-z]+$'	# Do not delete 'r'.
+
+import re
+print(str(bool(re.search(Regex_Pattern, input()))).lower())
+```
+
+### 5. [Matching Ending Items](https://www.hackerrank.com/challenges/matching-ending-items/problem)
+$ - The $ boundary matcher matches an occurrence of a character/character class/group at the end of a line.
+
+Regex Pattern - \w*s$
+
+Test String - `Challenges` | `Hints`
+```
+Regex_Pattern = r'^[a-zA-Z]*[sS]$'	# Do not delete 'r'.
 
 import re
 print(str(bool(re.search(Regex_Pattern, input()))).lower())
