@@ -1,11 +1,10 @@
 # REGular EXpressions from [HackerRank](https://www.hackerrank.com/domains/regex) (with Solutions in Python 3)
 
-[reponame]: regex
-[![GitHub contributors](https://img.shields.io/github/contributors/sinjoysaha/regex.svg)](https://GitHub.com/sinjoysaha/[reponame]/graphs/contributors/)
-[![GitHub forks](https://img.shields.io/github/forks/sinjoysaha/[reponame].svg)](https://GitHub.com/sinjoysaha/[reponame]/network/)
-[![GitHub stars](https://img.shields.io/github/stars/sinjoysaha/[reponame].svg)](https://GitHub.com/sinjoysaha/[reponame]/stargazers/)
-[![GitHub watchers](https://img.shields.io/github/watchers/sinjoysaha/[reponame].svg)](https://GitHub.com/sinjoysaha/[reponame]/watchers/)
-[![GitHub issues](https://img.shields.io/github/issues/sinjoysaha/[reponame].svg)](https://GitHub.com/sinjoysaha/[reponame]/issues/)
+[![GitHub contributors](https://img.shields.io/github/contributors/sinjoysaha/regex.svg)](https://GitHub.com/sinjoysaha/regex/graphs/contributors/)
+[![GitHub forks](https://img.shields.io/github/forks/sinjoysaha/regex.svg)](https://GitHub.com/sinjoysaha/regex/network/)
+[![GitHub stars](https://img.shields.io/github/stars/sinjoysaha/regex.svg)](https://GitHub.com/sinjoysaha/regex/stargazers/)
+[![GitHub watchers](https://img.shields.io/github/watchers/sinjoysaha/regex.svg)](https://GitHub.com/sinjoysaha/regex/watchers/)
+[![GitHub issues](https://img.shields.io/github/issues/sinjoysaha/regex.svg)](https://GitHub.com/sinjoysaha/regex/issues/)
 [![Profile views](https://gpvc.arturio.dev/sinjoysaha)](https://GitHub.com/sinjoysaha/)
 [![GitHub followers](https://img.shields.io/github/followers/sinjoysaha.svg)](https://github.com/sinjoysaha?tab=followers)
 [![LinkedIn](https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&color=545454)](https://linkedin.com/in/sinjoysaha)
