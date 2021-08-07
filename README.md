@@ -216,3 +216,47 @@ Regex_Pattern = r'^[a-zA-Z]*[sS]$'	# Do not delete 'r'.
 import re
 print(str(bool(re.search(Regex_Pattern, input()))).lower())
 ```
+
+## [Grouping and Capturing](https://www.hackerrank.com/domains/regex?filters%5Bsubdomains%5D%5B%5D=grouping-and-capturing)
+### 1. [Matching Word Boundaries](https://www.hackerrank.com/challenges/matching-word-boundaries/problem)
+\\b - \\b assert position at a word boundary.
+
+Regex Pattern - \\bcat\\b
+
+Test String - Acat | A `cat`
+```
+Regex_Pattern = r'\b[aeiouAEIOU][a-zA-Z]*\b'	# Do not delete 'r'.
+
+import re
+print(str(bool(re.search(Regex_Pattern, input()))).lower())
+```
+
+### 2. [Capturing & Non-Capturing Groups](https://www.hackerrank.com/challenges/capturing-non-capturing-groups/problem)
+\(\) - Parenthesis \(\) around a regular expression can group that part of regex together. This allows us to apply different quantifiers to that group. 
+
+These parenthesis also create a numbered capturing. It stores the part of string matched by the part of regex inside parentheses.
+
+These numbered capturing can be used for backreferences.
+
+Regex Pattern - It is (not)? your fault
+
+Test String - `It is not your fault` | `It is your fault`
+```
+Regex_Pattern = r'(ok){3,}'	# Do not delete 'r'.
+
+import re
+print(str(bool(re.search(Regex_Pattern, input()))).lower())
+```
+
+### 3. [Alternative Matching](https://www.hackerrank.com/challenges/alternative-matching/problem)
+| - Alternations, denoted by the | character, match a single item out of several possible items separated by the vertical bar. When used inside a character class, it will match characters; when used inside a group, it will match entire expressions (i.e., everything to the left or everything to the right of the vertical bar). We must use parentheses to limit the use of alternations.
+
+Regex Pattern - (and|AND|And)
+
+Test String - `And` the award goes to A `and ` D company
+```
+Regex_Pattern = r'^(Mr\.|Mrs\.|Ms\.|Dr\.|Er\.)[a-zA-Z]+$'	# Do not delete 'r'.
+
+import re
+print(str(bool(re.search(Regex_Pattern, input()))).lower())
+```
