@@ -179,7 +179,7 @@ print(str(bool(re.search(Regex_Pattern, input()))).lower())
 ```
 
 ### 3. [Matching Zero Or More Repetitions](https://www.hackerrank.com/challenges/matching-zero-or-more-repetitions/problem)
-* - The * tool will match zero or more repetitions of character/character class/group.
+\* - The * tool will match zero or more repetitions of character/character class/group.
 
 Regex Pattern - Ab*s
 
@@ -192,7 +192,7 @@ print(str(bool(re.search(Regex_Pattern, input()))).lower())
 ```
 
 ### 4. [Matching One Or More Repetitions](https://www.hackerrank.com/challenges/matching-one-or-more-repititions/problem)
-+ - The + tool will match one or more repetitions of character/character class/group.
+\+ - The + tool will match one or more repetitions of character/character class/group.
 
 Regex Pattern - Ab+s
 
