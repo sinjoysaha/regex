@@ -260,3 +260,98 @@ Regex_Pattern = r'^(Mr\.|Mrs\.|Ms\.|Dr\.|Er\.)[a-zA-Z]+$'	# Do not delete 'r'.
 import re
 print(str(bool(re.search(Regex_Pattern, input()))).lower())
 ```
+
+## [Backreferences](https://www.hackerrank.com/domains/regex?filters%5Bsubdomains%5D%5B%5D=backreferences)
+### 1. [Matching Same Text Again & Again](https://www.hackerrank.com/challenges/matching-same-text-again-again/problem)
+\\group_number - This tool (\\1 references the first capturing group) matches the same text as previously matched by the capturing group.
+
+Regex Pattern - (\\w)(\\w)(\\w)(\\w)y\\4\\3\\2\\1
+
+Test String - `malayalam`
+```
+Regex_Pattern = r'^([a-z])(\w)(\s)(\W)(\d)(\D)([A-Z])([a-zA-Z])([aeiouAEIOU])(\S)\1\2\3\4\5\6\7\8\9\10$'	# Do not delete 'r'.
+
+import re
+print(str(bool(re.search(Regex_Pattern, input()))).lower())
+```
+
+### 2. [Backreferences To Failed Groups](https://www.hackerrank.com/challenges/backreferences-to-failed-groups/problem)
+Backreference to a capturing group that match nothing is different from backreference to a capturing group that did not participate in the match at all.
+
+Capturing group that match nothing
+
+Regex Pattern - (\b?)o\\1
+
+Test String - `o`
+
+Here, \b? is optional and matches nothing.
+Thus, (\b?) is successfully matched and capture nothing.
+o is matched with o and \1 successfully matches the nothing captured by the group.
+
+Capturing group that didn't participate in the match at all
+
+Regex Pattern - (\b)?o\\1
+
+Test String - o
+
+In most regex flavors (excluding JavaScript), (b)?o\1 fails to match o.
+Here, (\b) fails to match at all. Since, the whole group is optional the regex engine does proceed to match o.
+The regex engine now arrives at \1 which references a group that did not participate in the match attempt at all.
+Thus, the backreference fails to match at all.
+
+```
+Regex_Pattern = r"^(\d\d)(-?)(\d\d)\2(\d\d)\2(\d\d)$"	# Do not delete 'r'.
+
+import re
+print(str(bool(re.search(Regex_Pattern, input()))).lower())
+```
+
+### 3. [Branch Reset Groups](https://www.hackerrank.com/challenges/branch-reset-groups/problem)
+
+**NOTE** - Branch reset group is supported by Perl, PHP, Delphi and R.
+
+(?|regex) - A branch reset group consists of alternations and capturing groups. (?|(regex1)|(regex2))
+Alternatives in branch reset group share same capturing group.
+
+Regex Pattern - (?|(Haa)|(Hee)|(bye)|(k))\1
+
+Test String - `HaaHaa` | `kk`
+
+Given below is a Perl code.
+
+```
+$Regex_Pattern = '^(\d\d)(?|(---)|(-)|(\.)|(:))(\d\d)\2(\d\d)\2(\d\d)$';
+
+$Test_String = <STDIN> ;
+if($Test_String =~ /$Regex_Pattern/){
+    print "true";
+} else {
+    print "false";
+}
+```
+
+### 4. [Forward References](https://www.hackerrank.com/challenges/forward-references/problem)
+
+**NOTE** - Forward reference is supported by JGsoft, .NET, Java, Perl, PCRE, PHP, Delphi and Ruby regex flavors.
+
+Forward reference creates a back reference to a regex that would appear later.
+Forward references are only useful if they're inside a repeated group.
+Then there may arise a case in which the regex engine evaluates the backreference after the group has been matched already.
+
+Regex Pattern - (\2amigo|(go!))+
+
+Test String - `go!go!amigo`
+
+Given below is a Perl code.
+
+```
+$Regex_Pattern = '^(\2tic|(tac))+$';
+
+$Test_String = <STDIN> ;
+if($Test_String =~ /$Regex_Pattern/){
+    print "true";
+} else {
+    print "false";
+}
+```
+
