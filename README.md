@@ -17,7 +17,7 @@
 Regex Pattern - wikipedia
 
 Test String - https://en. `wikipedia` .org/
-```
+```python
 Regex_Pattern = r'hackerrank'	# Do not delete 'r'.
 
 import re
@@ -319,7 +319,7 @@ Test String - `HaaHaa` | `kk`
 
 Given below is a Perl code.
 
-```
+```perl
 $Regex_Pattern = '^(\d\d)(?|(---)|(-)|(\.)|(:))(\d\d)\2(\d\d)\2(\d\d)$';
 
 $Test_String = <STDIN> ;
