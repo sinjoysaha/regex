@@ -33,7 +33,7 @@ Regex Pattern - A.B.C.D.
 
 Test String - `A+B+C=DE`
 
-```
+```python
 regex_pattern = r"^...\....\....\....$"	# Do not delete 'r'.
 
 import re
@@ -51,7 +51,7 @@ print(str(match).lower())
 Regex Pattern - \D\D\D\D
 
 Test String - `Hack`101
-```
+```python
 Regex_Pattern = r"\d\d\D\d\d\D\d\d\d\d"	# Do not delete 'r'.
 
 import re
@@ -66,7 +66,7 @@ print(str(bool(re.search(Regex_Pattern, input()))).lower())
 Regex Pattern - \s
 
 Test String - A` `B
-```
+```python
 Regex_Pattern = r"\S\S\s\S\S\s\S\S"	# Do not delete 'r'.
 
 import re
@@ -82,7 +82,7 @@ Non-word characters include characters other than alphanumeric characters (a-z, 
 Regex Pattern - \w\w\w
 
 Test String - $`one`
-```
+```python
 Regex_Pattern = r"\w\w\w\W\w\w\w\w\w\w\w\w\w\w\W\w\w\w"	# Do not delete 'r'.
 
 import re
@@ -99,7 +99,7 @@ Non-word characters include characters other than alphanumeric characters (a-z, 
 Regex Pattern - ^123
 
 Test String - `123`456
-```
+```python
 Regex_Pattern = r"^\d\w\w\w\w.$"	# Do not delete 'r'.
 
 import re
@@ -113,7 +113,7 @@ print(str(bool(re.search(Regex_Pattern, input()))).lower())
 Regex Pattern - \[aeiou\] is a vowel
 
 Test String - `o is a vowel` |  `e is a vowel`
-```
+```python
 Regex_Pattern = r'^[123][120][xs0][30Aa][xsu][.,]$'	# Do not delete 'r'.
 
 import re
@@ -126,7 +126,7 @@ print(str(bool(re.search(Regex_Pattern, input()))).lower())
 Regex Pattern - \[^aeiou\] is not a vowel
 
 Test String - `k is a vowel` |  `p is a vowel`
-```
+```python
 Regex_Pattern = r'^[\D][^aeiou][^bcDF][\S][^AEIOU][^.,]$'  # OR r'^[^\d][^aeiou][^bcDF][^\s][^AEIOU][^.,]$'	# Do not delete 'r'.
 
 import re
@@ -144,7 +144,7 @@ In addition, if you use a caret (^) as the first character inside a character cl
 Regex Pattern - \[x-z\]\[4-8\]\[A-K\]
 
 Test String - `x5F`
-```
+```python
 Regex_Pattern = r'^[a-z][1-9][^a-z][^A-Z][A-Z]'	# Do not delete 'r'.
 
 import re
@@ -158,7 +158,7 @@ print(str(bool(re.search(Regex_Pattern, input()))).lower())
 Regex Pattern - \w{4}
 
 Test String - `H_ck`
-```
+```python
 Regex_Pattern = r'^[a-zA-Z02468]{40}[13579\s]{5}$'	# Do not delete 'r'.
 
 import re
@@ -171,7 +171,7 @@ print(str(bool(re.search(Regex_Pattern, input()))).lower())
 Regex Pattern - \w{1,4}\d{4,}
 
 Test String - `Hk132156545654654654` | `Hack1021`
-```
+```python
 Regex_Pattern = r'^\d{1,2}[a-zA-Z]{3,}\.{0,3}$'	# Do not delete 'r'.
 
 import re
@@ -184,7 +184,7 @@ print(str(bool(re.search(Regex_Pattern, input()))).lower())
 Regex Pattern - Ab*s
 
 Test String - `As` | `Abbbbbs`
-```
+```python
 Regex_Pattern = r'^\d{2,}[a-z]*[A-Z]*$'	# Do not delete 'r'.
 
 import re
@@ -197,7 +197,7 @@ print(str(bool(re.search(Regex_Pattern, input()))).lower())
 Regex Pattern - Ab+s
 
 Test String - As | `Abbbbbs`
-```
+```python
 Regex_Pattern = r'^\d+[A-Z]+[a-z]+$'	# Do not delete 'r'.
 
 import re
@@ -210,7 +210,7 @@ $ - The $ boundary matcher matches an occurrence of a character/character class/
 Regex Pattern - \w*s$
 
 Test String - `Challenges` | `Hints`
-```
+```python
 Regex_Pattern = r'^[a-zA-Z]*[sS]$'	# Do not delete 'r'.
 
 import re
@@ -224,7 +224,7 @@ print(str(bool(re.search(Regex_Pattern, input()))).lower())
 Regex Pattern - \\bcat\\b
 
 Test String - Acat | A `cat`
-```
+```python
 Regex_Pattern = r'\b[aeiouAEIOU][a-zA-Z]*\b'	# Do not delete 'r'.
 
 import re
@@ -241,7 +241,7 @@ These numbered capturing can be used for backreferences.
 Regex Pattern - It is (not)? your fault
 
 Test String - `It is not your fault` | `It is your fault`
-```
+```python
 Regex_Pattern = r'(ok){3,}'	# Do not delete 'r'.
 
 import re
@@ -254,7 +254,7 @@ print(str(bool(re.search(Regex_Pattern, input()))).lower())
 Regex Pattern - (and|AND|And)
 
 Test String - `And` the award goes to A `and ` D company
-```
+```python
 Regex_Pattern = r'^(Mr\.|Mrs\.|Ms\.|Dr\.|Er\.)[a-zA-Z]+$'	# Do not delete 'r'.
 
 import re
@@ -268,7 +268,7 @@ print(str(bool(re.search(Regex_Pattern, input()))).lower())
 Regex Pattern - (\\w)(\\w)(\\w)(\\w)y\\4\\3\\2\\1
 
 Test String - `malayalam`
-```
+```python
 Regex_Pattern = r'^([a-z])(\w)(\s)(\W)(\d)(\D)([A-Z])([a-zA-Z])([aeiouAEIOU])(\S)\1\2\3\4\5\6\7\8\9\10$'	# Do not delete 'r'.
 
 import re
@@ -299,7 +299,7 @@ Here, (\b) fails to match at all. Since, the whole group is optional the regex e
 The regex engine now arrives at \1 which references a group that did not participate in the match attempt at all.
 Thus, the backreference fails to match at all.
 
-```
+```python
 Regex_Pattern = r"^(\d\d)(-?)(\d\d)\2(\d\d)\2(\d\d)$"	# Do not delete 'r'.
 
 import re
@@ -344,7 +344,7 @@ Test String - `go!go!amigo`
 
 Given below is a Perl code.
 
-```
+```perl
 $Regex_Pattern = '^(\2tic|(tac))+$';
 
 $Test_String = <STDIN> ;
